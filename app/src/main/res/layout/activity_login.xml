@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="192dp"
+        android:layout_height="192dp"
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/google_btn"
+        style="@style/BasicButton.ThirdPartyButton"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/google"
+        android:text="@string/action_google"
+        app:layout_constraintBottom_toTopOf="@+id/facebook_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/facebook_btn"
+        style="@style/BasicButton.ThirdPartyButton"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/facebook"
+        android:text="@string/action_facebook"
+        app:layout_constraintBottom_toTopOf="@+id/apple_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/apple_btn"
+        style="@style/BasicButton.ThirdPartyButton"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/apple"
+        android:text="@string/action_appple"
+        app:layout_constraintBottom_toTopOf="@+id/email_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/email_btn"
+        style="@style/BasicButton.EmailButton"
+        android:layout_marginBottom="24dp"
+        android:drawableStart="@drawable/email"
+        android:text="@string/action_email"
+        app:layout_constraintBottom_toTopOf="@+id/sign_up_txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        style="@style/SmallText"
+        android:id="@+id/sign_up_txt"
+        android:text="@string/action_sign_up"
+        android:clickable="true"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

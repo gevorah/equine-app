@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Login edit text. -->
+    <style name="LoginEditText" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/border_nofill</item>
+        <item name="android:drawablePadding">9dp</item>
+        <item name="android:textColor">@color/gray_light</item>
+    </style>
+
+    <!-- Login buttons. -->
+    <style name="BasicButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:enabled">true</item>
+    </style>
+    <style name="BasicButton.ActionButton">
+        <item name="android:background">@drawable/border_fill</item>
+    </style>
+    <style name="BasicButton.ThirdPartyButton">
+        <item name="android:background">@drawable/noborder_fill</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingStart">13dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    <style name="BasicButton.EmailButton">
+        <item name="android:background">@drawable/border_nofill</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:paddingStart">13dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+    
+    <!-- Login text view. -->
+    <style name="SmallText" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1036070182029",
+    "project_id": "pets-cued",
+    "storage_bucket": "pets-cued.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1036070182029:android:81cd3a54b47b39244116c4",
+        "android_client_info": {
+          "package_name": "co.edu.icesi.dev.petscued"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1036070182029-6ssaodcna7ivi6o17ilp75vibdbkpd96.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsxWdRDVpj6mE1ic0_Ez3xJfV65466U0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1036070182029-6ssaodcna7ivi6o17ilp75vibdbkpd96.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
