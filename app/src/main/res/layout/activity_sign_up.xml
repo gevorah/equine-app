@@ -25,71 +25,58 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
+        style="@style/Widget.App.Text.Subtitle"
         android:id="@+id/register_text"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="24dp"
         android:text="@string/register"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
+        style="@style/Widget.App.EditText.RoundBox"
         android:id="@+id/name_fld"
-        style="@style/LoginEditText"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:autofillHints="@string/prompt_email"
-        android:drawableStart="@drawable/account_circle_24px"
-        android:hint="@string/prompt_name"
+        android:drawableStart="@drawable/ic_outline_account_24"
         android:inputType="textPersonName"
-        android:minHeight="48dp"
+        android:hint="@string/prompt_name"
+        android:autofillHints="@string/prompt_email"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_text" />
 
     <EditText
+        style="@style/Widget.App.EditText.RoundBox"
         android:id="@+id/email_fld"
-        style="@style/LoginEditText"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:autofillHints="@string/prompt_email"
-        android:drawableStart="@drawable/mail_24px"
-        android:hint="@string/prompt_email"
+        android:drawableStart="@drawable/ic_mail_24"
         android:inputType="textEmailAddress"
-        android:minHeight="48dp"
+        android:hint="@string/prompt_email"
+        android:autofillHints="@string/prompt_email"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_fld" />
 
     <EditText
+        style="@style/Widget.App.EditText.RoundBox"
         android:id="@+id/password_fld"
-        style="@style/LoginEditText"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:autofillHints="@string/prompt_email"
-        android:drawableStart="@drawable/vpn_key_24px"
-        android:hint="@string/prompt_password"
+        android:drawableStart="@drawable/ic_vpn_key_24"
         android:inputType="textPassword"
-        android:minHeight="48dp"
+        android:hint="@string/prompt_password"
+        android:autofillHints="@string/prompt_email"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_fld" />
 
     <Button
-        android:id="@+id/sign_up_btn"
-        style="@style/BasicButton.ActionButton"
-        android:layout_gravity="start"
+        android:id="@+id/singUpBtn"
+        style="@style/Widget.App.Button.BorderContained"
         android:layout_marginTop="24dp"
         android:text="@string/action_sign_up"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,12 +84,12 @@
         app:layout_constraintTop_toBottomOf="@+id/password_fld" />
 
     <TextView
-        style="@style/SmallText"
+        style="@style/Widget.App.Text.Small"
         android:id="@+id/lost_password"
         android:layout_marginTop="24dp"
         android:text="@string/accept_register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/singUpBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

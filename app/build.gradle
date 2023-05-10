@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace 'co.edu.icesi.dev.petscued'
+    namespace 'co.edu.icesi.dev.equineapp'
     compileSdk 32
 
     defaultConfig {
-        applicationId "co.edu.icesi.dev.petscued"
-        minSdk 29
+        applicationId "co.edu.icesi.dev.equineapp"
+        minSdk 28
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -39,14 +39,16 @@ android {
 
 dependencies {
     // design
+    implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.fragment:fragment-ktx:1.5.4'
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
     // firebase
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.2'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.0.2'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.0'
     // mvvm
@@ -56,7 +58,7 @@ dependencies {
     implementation 'androidx.fragment:fragment-ktx:1.5.2'
     implementation 'com.google.code.gson:gson:2.9.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4"
-    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.1.0'
     // testing
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

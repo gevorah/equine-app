@@ -1,1 +1,1 @@
-# pets-cued
+# equine-app

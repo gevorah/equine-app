@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/questionName"
             android:text="@string/ayuda1"
-            android:fontFamily="@font/roboto_regular"
             android:textSize="12dp"
             android:padding="16dp"/>
         <RelativeLayout

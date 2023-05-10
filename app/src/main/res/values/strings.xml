@@ -1,32 +1,33 @@
 <resources>
-    <string name="app_name">Pet\'s Cued</string>
-    <!-- Strings related to login -->
+    <string name="app_name">EquineApp</string>
+
+    <!-- prompts -->
+    <string name="prompt_name">Nombre</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_phone">Teléfono</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_new_password">Nueva contraseña</string>
+    <string name="prompt_rep_new_password">Repita la nueva contraseña</string>
+
+
+    <!-- strings related to login -->
     <string name="action_google">Continuar con Google</string>
     <string name="action_facebook">Continuar con Facebook</string>
     <string name="action_appple">Continuar con Apple</string>
     <string name="action_email">Continuar con Email</string>
     <string name="register">¡Regístrate!</string>
-    <string name="prompt_name">Nombre</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Contraseña</string>
     <string name="action_sign_in">Iniciar Sesión</string>
     <string name="action_sign_up">Crear Cuenta</string>
     <string name="lost_password">¿Olvidaste tu contraseña?</string>
     <string name="accept_register">Al continuar, está indicando que acepta nuestros Términos y Política de Privacidad.</string>
 
-
-    <!-- Strings related to nav -->
+    <!-- strings related to nav -->
     <string name="back_nav">Regresar</string>
     <string name="home_nav">Inicio</string>
     <string name="pets_nav">Mascotas</string>
     <string name="account_nav">Perfil</string>
 
-    <!-- Strings related to pets -->
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <!-- strings related to pets -->
     <string name="pets">Mascotas</string>
     <string name="name_pet">Nombre de la mascota</string>
     <string name="color_pet">Color de la mascota</string>
@@ -37,7 +38,7 @@
     <string name="phone_owner">Numero de telefono</string>
     <string name="name_fundation">Nombre de la fundación</string>
 
-    <!-- Strings related to s -->
+    <!-- strings related to s -->
     <string name="adopcion">Adopción</string>
     <string name="perdido">Perdido</string>
     <string name="mis_publicaciones">Mis Publicaciones</string>
@@ -52,5 +53,18 @@
     <string name="ayuda1">¿Cómo publicar mascota perdida?</string>
     <string name="ayuda1.1">En la pantalla home, oprimir el boton "publicar mascota perdida"?</string>
 
+    <!-- strings related to profile -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="profile">Perfil</string>
+    <string name="content">Contenido</string>
+    <string name="publications">Administrar publicaciones</string>
+    <string name="user">Usuario</string>
+    <string name="edit_profile">Editar perfil</string>
+    <string name="support">Ayuda</string>
+    <string name="questions">Preguntas frecuentes</string>
+    <string name="chat">Chat en línea</string>
+    <string name="contact">Contáctanos</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="save">Guardar</string>
 
 </resources>

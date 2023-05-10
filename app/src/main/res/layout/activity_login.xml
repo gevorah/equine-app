@@ -5,59 +5,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="192dp"
-        android:layout_height="192dp"
-        android:layout_marginTop="32dp"
-        android:contentDescription="@string/app_name"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profile_card"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        app:cardCornerRadius="150dp"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintBottom_toTopOf="@+id/google_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:background="@drawable/profilephoto_style"
+            android:foreground="@drawable/profilephoto_style"
+            android:src="@drawable/logo" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
+        style="@style/Widget.App.Button.Contained"
         android:id="@+id/google_btn"
-        style="@style/BasicButton.ThirdPartyButton"
         android:layout_marginBottom="24dp"
-        android:drawableStart="@drawable/google"
+        android:drawableStart="@drawable/ic_google_24"
         android:text="@string/action_google"
         app:layout_constraintBottom_toTopOf="@+id/facebook_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        style="@style/Widget.App.Button.Contained"
         android:id="@+id/facebook_btn"
-        style="@style/BasicButton.ThirdPartyButton"
         android:layout_marginBottom="24dp"
-        android:drawableStart="@drawable/facebook"
+        android:drawableStart="@drawable/ic_facebook_24"
         android:text="@string/action_facebook"
         app:layout_constraintBottom_toTopOf="@+id/apple_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        style="@style/Widget.App.Button.Contained"
         android:id="@+id/apple_btn"
-        style="@style/BasicButton.ThirdPartyButton"
         android:layout_marginBottom="24dp"
-        android:drawableStart="@drawable/apple"
+        android:drawableStart="@drawable/ic_apple_24"
         android:text="@string/action_appple"
         app:layout_constraintBottom_toTopOf="@+id/email_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        style="@style/Widget.App.Button.Outlined"
         android:id="@+id/email_btn"
-        style="@style/BasicButton.EmailButton"
         android:layout_marginBottom="24dp"
-        android:drawableStart="@drawable/email"
+        android:drawableStart="@drawable/ic_email_24"
         android:text="@string/action_email"
         app:layout_constraintBottom_toTopOf="@+id/sign_up_txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        style="@style/SmallText"
+        style="@style/Widget.App.Text.Small"
         android:id="@+id/sign_up_txt"
         android:text="@string/action_sign_up"
         android:clickable="true"
