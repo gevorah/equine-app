@@ -27,16 +27,16 @@
     <string name="pets_nav">Mascotas</string>
     <string name="account_nav">Perfil</string>
 
-    <!-- strings related to pets -->
-    <string name="pets">Mascotas</string>
-    <string name="name_pet">Nombre de la mascota</string>
-    <string name="color_pet">Color de la mascota</string>
-    <string name="breed_pet">Raza de la mascota</string>
-    <string name="age_pet">Edad de la mascota</string>
+    <!-- strings related to appointment and medical history -->
+    <string name="name_horse">Nombre del caballo</string>
     <string name="name_owner">Nombre del dueño</string>
-    <string name="adress_owner">Dirección del dueño</string>
+    <string name="adress_owner">Dirección de residencia</string>
     <string name="phone_owner">Numero de telefono</string>
-    <string name="name_fundation">Nombre de la fundación</string>
+    <string name="motive">Motivo de consulta</string>
+    <string name="age">Edad del caballo</string>
+    <string name="email">correo electronico</string>
+    <string name="description">Descripción fisica del caballo</string>
+
 
     <!-- strings related to s -->
     <string name="adopcion">Adopción</string>

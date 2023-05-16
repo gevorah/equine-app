@@ -25,15 +25,15 @@
             android:layout_height="wrap_content"
             android:id="@+id/expandible_layout"
             >
+
             <TextView
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/description"
-                android:text="@string/ayuda1.1"
                 android:fontFamily="@font/roboto_regular"
                 android:padding="16dp"
-                android:textSize="14dp"
-                />
+                android:text="@string/ayuda1.1"
+                android:textSize="14dp" />
 
 
         </RelativeLayout>
