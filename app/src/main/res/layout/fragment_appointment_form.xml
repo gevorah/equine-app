@@ -10,41 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/photoImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <Button
-            android:id="@+id/selectImgBttn"
-            android:layout_width="49dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="68dp"
-            android:background="@color/brown_dark"
-            android:backgroundTint="@color/brown_dark"
-            android:text="+"
-            android:theme="@style/Theme.AppCompat"
-            android:textSize="24sp"
-            app:layout_constraintStart_toEndOf="@+id/photoImg"
-            app:layout_constraintTop_toTopOf="parent"
-            app:iconTint="@color/brown_dark"/>
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Nombre caballo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photoImg" />
+            app:layout_constraintTop_toBottomOf="@+id/imageButtonHorse" />
 
         <EditText
             android:id="@+id/editTextTextHorseName"
@@ -74,7 +49,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Nombre del dueño"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextHorseName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextHorseAge" />
 
         <EditText
             android:id="@+id/editTextTextOwnerName"
@@ -134,7 +109,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Motivo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPhoneNumber" />
 
         <EditText
             android:id="@+id/editTextTextMotive"
@@ -210,7 +185,7 @@
 
 
         <Button
-            android:id="@+id/lostPetBttn"
+            android:id="@+id/appointmentBttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
@@ -235,7 +210,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextTextPhoneNumber"
             android:layout_width="332dp"
             android:layout_height="48dp"
             android:layout_marginStart="35dp"
@@ -249,6 +224,49 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Edad del caballo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextHorseName" />
+
+        <EditText
+            android:id="@+id/editTextHorseAge"
+            android:layout_width="0dp"
+            android:layout_height="50"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/border_fill_blue"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@string/age"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <ImageButton
+            android:id="@+id/imageButtonHorse"
+            android:layout_width="118dp"
+            android:layout_height="107dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="30dp"
+            tools:src="@tools:sample/avatars" />
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back_24"
+            tools:layout_editor_absoluteX="11dp"
+            tools:layout_editor_absoluteY="8dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

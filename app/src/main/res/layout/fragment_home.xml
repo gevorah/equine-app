@@ -10,23 +10,13 @@
         android:id="@+id/lostImageButton"
         android:layout_width="300dp"
         android:layout_height="100dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="120dp"
         android:contentDescription="button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.558"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/agendar_button" />
-
-    <ImageButton
-        android:id="@+id/adoptionImageButton"
-        android:layout_width="300dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="15dp"
-        android:contentDescription="button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lostImageButton"
-        app:srcCompat="@drawable/crear_button" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homePublicationRecyclerView"
@@ -43,22 +33,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Citas del día"
         android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/adoptionImageButton" />
+        tools:layout_editor_absoluteY="275dp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/adoptionImageButton"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        tools:layout_editor_absoluteY="275dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
@@ -69,5 +57,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FAFAFA"
+        android:fontFamily="@font/roboto_black"
+        android:text="¡Bienvenido!"
+        android:textColor="#F44040"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="59dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

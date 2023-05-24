@@ -135,7 +135,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Correo electronico"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPhoneNumber" />
 
         <EditText
             android:id="@+id/editTextTextMotive"
@@ -195,7 +195,7 @@
 
 
         <Button
-            android:id="@+id/lostPetBttn"
+            android:id="@+id/appointmentBttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
@@ -220,7 +220,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextTextPhoneNumber"
             android:layout_width="332dp"
             android:layout_height="48dp"
             android:layout_marginStart="35dp"

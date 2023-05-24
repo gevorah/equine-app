@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.pets.PetInfoFragment">
+    tools:context=".view.appointment.PetInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -199,7 +199,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
 
         <TextView
-            android:id="@+id/textViewEmail"
+            android:id="@+id/textViewDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -218,7 +218,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmail" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
