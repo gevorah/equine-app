@@ -11,14 +11,14 @@
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/activity_sign_in.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/activity_sign_up.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/comment.xml" value="0.215625" />
-        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fila_help.xml" value="0.215625" />
-        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_appointment_form.xml" value="0.215625" />
+        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fila_help.xml" value="0.25" />
+        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_appointment_form.xml" value="0.25" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_edit_profile.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_help.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_medicalhistory_form.xml" value="0.33" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_pet_info.xml" value="0.38227146814404434" />
-        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_pets.xml" value="0.215625" />
+        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_pets.xml" value="0.1" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_publication_filter.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_publication_form.xml" value="0.33" />

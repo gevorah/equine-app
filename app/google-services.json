@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "1036070182029",
-    "project_id": "pets-cued",
-    "storage_bucket": "pets-cued.appspot.com"
+    "project_number": "690217496440",
+    "project_id": "equineapp-eb22f",
+    "storage_bucket": "equineapp-eb22f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1036070182029:android:81cd3a54b47b39244116c4",
+        "mobilesdk_app_id": "1:690217496440:android:5f5c9f463b47fb2648a28d",
         "android_client_info": {
-          "package_name": "co.edu.icesi.dev.petscued"
+          "package_name": "co.edu.icesi.dev.equineapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1036070182029-6ssaodcna7ivi6o17ilp75vibdbkpd96.apps.googleusercontent.com",
+          "client_id": "690217496440-aicc4ksunvm0mts1gbrfnaj56bihfk1g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBsxWdRDVpj6mE1ic0_Ez3xJfV65466U0E"
+          "current_key": "AIzaSyAUaVOkur-LH6eQzxWtPdq9R1DGPheq7UU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1036070182029-6ssaodcna7ivi6o17ilp75vibdbkpd96.apps.googleusercontent.com",
+              "client_id": "690217496440-aicc4ksunvm0mts1gbrfnaj56bihfk1g.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -31,10 +31,10 @@ class ProfileFragment : Fragment() {
             val userPublicationsFragment = UserPublicationsFragment()
             setFragment(userPublicationsFragment)
         }
-        binding.editProfileBtn.setOnClickListener {
+       /* binding.editProfileBtn.setOnClickListener {
             val editProfileFragment = EditProfileFragment()
             setFragment(editProfileFragment)
-        }
+        }*/
         binding.questionsBtn.setOnClickListener {
             val helpFragment = HelpFragment()
             setFragment(helpFragment)

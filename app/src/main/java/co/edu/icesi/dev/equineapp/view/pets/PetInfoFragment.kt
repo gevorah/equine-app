@@ -24,7 +24,7 @@ class PetInfoFragment(private val publication : Publication) : Fragment() {
 
     private lateinit var binding: FragmentPetInfoBinding
     private lateinit var commentLayoutManager: LinearLayoutManager
-    private lateinit var commentAdapter: CommentAdapter
+    //private lateinit var commentAdapter: CommentAdapter
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -34,12 +34,12 @@ class PetInfoFragment(private val publication : Publication) : Fragment() {
         binding.backPetInfoButton.setOnClickListener{
             activity?.supportFragmentManager?.popBackStack()
         }
-        binding.commentBttn.setOnClickListener{
+       /*binding.commentBttn.setOnClickListener{
             if(publish()){
                 Toast.makeText(this.context, "Su comentario se publico con exito", Toast.LENGTH_SHORT).show()
-                binding.CommentEditTextMultiLine.setText("")
+              //  binding.CommentEditTextMultiLine.setText("")
             }
-        }
+        }*/
 
         return binding.root
     }
@@ -53,32 +53,32 @@ class PetInfoFragment(private val publication : Publication) : Fragment() {
         binding.textViewName.text = publication.name
         binding.textViewLocation.text = publication.location
         binding.textViewOwner.text = publication.owner
-        binding.textViewSex.text = publication.sex
+       // binding.textViewSex.text = publication.sex
         binding.textViewAge.text = publication.age
-        binding.textViewBreed.text = publication.breed
-        binding.editTextMultiLineDetails.setText(publication.description)
-        binding.textViewContactInfo.text = publication.contactInformation
+      //  binding.textViewBreed.text = publication.breed
+      //  binding.editTextMultiLineDetails.setText(publication.description)
+      //  binding.textViewContactInfo.text = publication.contactInformation
 
         //comentarios
 
         this.commentLayoutManager = LinearLayoutManager(context)
-        commentRecyclerView.layoutManager = commentLayoutManager
+       /* commentRecyclerView.layoutManager = commentLayoutManager
         commentRecyclerView.setHasFixedSize(true)
         commentAdapter = CommentAdapter(this)
-        commentRecyclerView.adapter = commentAdapter
+        commentRecyclerView.adapter = commentAdapter*/
         loadCommentsFromFirebase()
     }
 
     private fun loadCommentsFromFirebase() {
-        commentAdapter.clearList(commentAdapter.itemCount)
+       // commentAdapter.clearList(commentAdapter.itemCount)
         Firebase.firestore.collection("comments").whereEqualTo("publicationId", publication.id).get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
                 val comment = doc.toObject(Comment::class.java)
-                commentAdapter?.addComment(comment)
+              //  commentAdapter?.addComment(comment)
             }
         }
     }
-    private fun publish(): Boolean {
+  /*  private fun publish(): Boolean {
 
         if(!checkIfNotBlankOrEmpty(binding.CommentEditTextMultiLine.text.toString()))
             return false
@@ -96,7 +96,7 @@ class PetInfoFragment(private val publication : Publication) : Fragment() {
         loadCommentsFromFirebase()
 
         return true
-    }
+    }*/
 
     private fun checkIfNotBlankOrEmpty(field: String): Boolean {
         if(field.isNotBlank() && field.isNotEmpty()){

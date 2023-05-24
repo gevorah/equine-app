@@ -20,7 +20,7 @@ class PetsFragment : Fragment() {
     private lateinit var binding: FragmentPetsBinding
     private lateinit var publicationLayoutManager: GridLayoutManager
     private lateinit var petsPublicationAdapter: PetsPublicationAdapter
-    private var publicationFilterFragment: PublicationFilterFragment? = null
+    //private var publicationFilterFragment: PublicationFilterFragment? = null
     private var isLostButtonGreen: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -37,14 +37,14 @@ class PetsFragment : Fragment() {
             binding.adoptionPetsButton.setBackgroundColor(Color.parseColor("#FFCF9E70"))
             isLostButtonGreen = true
         }
-        binding.filterPetsButton.setOnClickListener {
+       /* binding.filterPetsButton.setOnClickListener {
             if(publicationFilterFragment == null){
                 publicationFilterFragment = PublicationFilterFragment(this)
                 setFragment(publicationFilterFragment!!)
             }else{
                 setFragment(publicationFilterFragment!!)
             }
-        }
+        }*/
         return binding.root
     }
 
@@ -55,7 +55,7 @@ class PetsFragment : Fragment() {
         petsPublicationRecyclerView.setHasFixedSize(true)
         this.petsPublicationAdapter = PetsPublicationAdapter(this)
         petsPublicationRecyclerView.adapter = this.petsPublicationAdapter
-        if(publicationFilterFragment==null){
+       /* if(publicationFilterFragment==null){
             binding.lostPetsButton.performClick()
         }else{
             if(isLostButtonGreen){
@@ -67,12 +67,12 @@ class PetsFragment : Fragment() {
                 binding.lostPetsButton.setBackgroundColor(Color.parseColor("#FFCF9E70"))
                 applyFilters(publicationFilterFragment!!.getFilters(Publication.ADOPTION), Publication.ADOPTION)
             }
-        }
+        }*/
     }
 
-    fun setPublicationFilterFragment(publicationFilterFragment : PublicationFilterFragment){
+    /*fun setPublicationFilterFragment(publicationFilterFragment : PublicationFilterFragment){
         this.publicationFilterFragment = publicationFilterFragment
-    }
+    }*/
 
     fun setFragment(fragment: Fragment) = requireActivity().supportFragmentManager.beginTransaction().apply {
         replace(R.id.fl_wrapper, fragment)
