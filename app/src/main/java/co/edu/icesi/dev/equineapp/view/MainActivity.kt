@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.model.User
 import co.edu.icesi.dev.equineapp.view.home.HomeFragment
-import co.edu.icesi.dev.equineapp.view.pets.PetsFragment
 import co.edu.icesi.dev.equineapp.view.profile.ProfileFragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

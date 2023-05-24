@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.model.Publication
-import co.edu.icesi.dev.equineapp.view.pets.PetInfoFragment
 import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
