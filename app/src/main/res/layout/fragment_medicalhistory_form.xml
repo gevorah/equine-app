@@ -4,48 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.home.PublicationFormFragment">
+    tools:context=".view.appointment.MedicalHistoryFormFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:autofillHints="@string/description">
 
-        <ImageView
-            android:id="@+id/photoImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
-        <Button
-            android:id="@+id/selectImgBttn"
-            android:layout_width="49dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="68dp"
-            android:background="@color/brown_dark"
-            android:backgroundTint="@color/brown_dark"
-            android:text="+"
-            android:textSize="24sp"
-            android:theme="@style/Theme.AppCompat"
-            app:iconTint="@color/brown_dark"
-            app:layout_constraintStart_toEndOf="@+id/photoImg"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Nombre caballo"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photoImg" />
+            app:layout_constraintTop_toBottomOf="@+id/backButtn" />
 
         <EditText
             android:id="@+id/editTextTextHorseName"
@@ -138,7 +113,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPhoneNumber" />
 
         <EditText
-            android:id="@+id/editTextTextMotive"
+            android:id="@+id/editTextemail"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_marginStart="35dp"
@@ -165,7 +140,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Edad del caballo"
             app:layout_constraintEnd_toStartOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMotive" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextemail" />
 
         <TextView
             android:id="@+id/textView6"
@@ -176,10 +151,10 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Descripción del caballo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMotive" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextemail" />
 
         <EditText
-            android:id="@+id/editTextTextHour"
+            android:id="@+id/editTextTextHorseAge"
             android:layout_width="176dp"
             android:layout_height="49dp"
             android:layout_marginStart="20dp"
@@ -195,19 +170,19 @@
 
 
         <Button
-            android:id="@+id/appointmentBttn"
+            android:id="@+id/saveBttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:backgroundTint="@color/brown_dark"
             android:fontFamily="@font/roboto_bold"
-            android:text="Agendar"
+            android:text="Guardar"
             android:theme="@style/Theme.AppCompat"
             app:iconTint="@color/brown_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
         <TextView
             android:id="@+id/textView9"
@@ -236,7 +211,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/editTextDescription"
             android:layout_width="186dp"
             android:layout_height="96dp"
             android:layout_marginStart="10dp"
@@ -245,8 +220,18 @@
             android:ems="10"
             android:gravity="start|top"
             android:inputType="textMultiLine"
-            app:layout_constraintStart_toEndOf="@+id/editTextTextHour"
+            app:layout_constraintStart_toEndOf="@+id/editTextTextHorseAge"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <ImageButton
+            android:id="@+id/backButtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

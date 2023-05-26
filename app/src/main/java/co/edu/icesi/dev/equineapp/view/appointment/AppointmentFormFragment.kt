@@ -42,7 +42,7 @@ class AppointmentFormFragment (private val status : String) : Fragment(){
             intent.type = "image/*"
             galleryLauncher.launch(intent)
         }
-        binding.appointmentBttn.setOnClickListener {
+        binding.saveBttn.setOnClickListener {
             if(publish()){
                 val appointmentInfoFragment = AppointmentInfoFragment()
                 setFragment(appointmentInfoFragment)
