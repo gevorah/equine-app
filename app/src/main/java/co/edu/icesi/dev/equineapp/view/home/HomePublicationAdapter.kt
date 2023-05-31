@@ -30,8 +30,8 @@ class HomePublicationAdapter(private val homeFragment: HomeFragment) : RecyclerV
         holder.ownerTextView.text = publication.owner
         holder.locationTextView.text = publication.location
         holder.itemView.setOnClickListener{
-            val petInfoFragment = PetInfoFragment(publication)
-            homeFragment.setFragment(petInfoFragment)
+          //  val petInfoFragment = PetInfoFragment(publication)
+           // homeFragment.setFragment(petInfoFragment)
         }
     }
 

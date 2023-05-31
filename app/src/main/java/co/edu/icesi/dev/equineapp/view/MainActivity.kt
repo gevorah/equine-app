@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import android.Manifest
 import android.content.Intent
+import co.edu.icesi.dev.equineapp.view.appointment.AppointmentFormFragment
 import co.edu.icesi.dev.equineapp.view.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
@@ -25,40 +26,36 @@ class MainActivity : AppCompatActivity() {
 
         requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
 
-        if (loadUser() == null || Firebase.auth.currentUser == null || Firebase.auth.currentUser?.isEmailVerified == false) {
+        /* if (loadUser() == null || Firebase.auth.currentUser == null || Firebase.auth.currentUser?.isEmailVerified == false) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
             return
-        } else {
-            val homeFragment = HomeFragment()
-            val petsFragment = PetsFragment()
-            val profileFragment = ProfileFragment()
+        } else {*/
+        val homeFragment = HomeFragment()
+        val profileFragment = ProfileFragment()
+        val appointmentfragment = AppointmentFormFragment()
 
-            setFragment(homeFragment)
+        setFragment(appointmentfragment)
 
-            bottom_navigation?.setOnItemSelectedListener {
-                when (it.itemId) {
-                    R.id.navigation_home -> {
-                        setFragment(homeFragment)
-                        return@setOnItemSelectedListener true
-                    }
-                    R.id.navigation_pets -> {
-                        setFragment(petsFragment)
-                        return@setOnItemSelectedListener true
-                    }
-                    R.id.navigation_profile -> {
-                        setFragment(profileFragment)
-                        return@setOnItemSelectedListener true
-                    }
+        bottom_navigation?.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.navigation_home -> {
+                    setFragment(homeFragment)
+                    return@setOnItemSelectedListener true
                 }
-                true
+                R.id.navigation_profile -> {
+                    setFragment(profileFragment)
+                    return@setOnItemSelectedListener true
+                }
             }
+            true
         }
+        //}
     }
 
     private fun loadUser(): User? {
-        val sp = getSharedPreferences("pets-cued", AppCompatActivity.MODE_PRIVATE)
+        val sp = getSharedPreferences("equineapp", AppCompatActivity.MODE_PRIVATE)
         val json = sp.getString("user", "NO_USER")
         if (json == "NO_USER") {
             return null

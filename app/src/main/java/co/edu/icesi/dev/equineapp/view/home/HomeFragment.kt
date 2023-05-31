@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentHomeBinding
 import co.edu.icesi.dev.equineapp.model.Publication
+import co.edu.icesi.dev.equineapp.view.appointment.AppointmentFormFragment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -25,13 +26,10 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.lostImageButton.setOnClickListener {
-            val publicationFormFragment = PublicationFormFragment(Publication.LOST)
+            val publicationFormFragment = AppointmentFormFragment()
             setFragment(publicationFormFragment)
         }
-        binding.adoptionImageButton.setOnClickListener {
-            val publicationFormFragment = PublicationFormFragment(Publication.ADOPTION)
-            setFragment(publicationFormFragment)
-        }
+
         return binding.root
     }
 

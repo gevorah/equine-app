@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.AutoCompleteTextView
 import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
@@ -23,7 +25,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import java.util.*
 
-class AppointmentFormFragment (private val status : String) : Fragment(){
+class AppointmentFormFragment () : Fragment(){
 
     private lateinit var binding: FragmentAppointmentFormBinding
     private lateinit var galleryLauncher: ActivityResultLauncher<Intent>
@@ -35,13 +37,16 @@ class AppointmentFormFragment (private val status : String) : Fragment(){
     ): View {
         binding = FragmentAppointmentFormBinding.inflate(inflater, container, false)
 
-        galleryLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult(), ::onGalleryResult)
+        val items = listOf("Option 1", "Option 2", "Option 3", "Option 4")
 
-        binding.imageButtonHorse.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
-            intent.type = "image/*"
-            galleryLauncher.launch(intent)
-        }
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
+        (binding.menu.editText as? AutoCompleteTextView)?.setAdapter(adapter)
+
+
+
+
+
+
         binding.saveBttn.setOnClickListener {
             if(publish()){
                 val appointmentInfoFragment = AppointmentInfoFragment()
@@ -60,14 +65,7 @@ class AppointmentFormFragment (private val status : String) : Fragment(){
         commit()
     }
 
-    private fun onGalleryResult(result: ActivityResult) {
-        if(result.resultCode == RESULT_OK) {
-            uri = result.data?.data
-            uri?.let {
-                binding.imageButtonHorse.setImageURI(uri)
-            }
-        }
-    }
+
 
     private fun publish(): Boolean {
         if(uri==null){
@@ -90,7 +88,7 @@ class AppointmentFormFragment (private val status : String) : Fragment(){
             return false
         else if(!checkIfNotBlankOrEmpty(binding.editTextTextPhoneNumber.text.toString()))
             return false
-        val image = UUID.randomUUID().toString() // OK
+
         val horseName = binding.editTextTextHorseName.text.toString()
         val horseAge = binding.editTextHorseAge.text.toString()
         val ownerName = binding.editTextTextOwnerName.text.toString() // OK
@@ -104,12 +102,11 @@ class AppointmentFormFragment (private val status : String) : Fragment(){
 
         val horse = Horse(
             horseid,
-            image,
             horseName,
             horseAge,
             Firebase.auth.currentUser!!.uid
         )
-        Firebase.storage.reference.child("horses").child(image).putFile(uri!!)
+
         Firebase.firestore.collection("horses").document(horse.id).set(horse)
 
         val appointment = Appointment(

@@ -27,10 +27,10 @@ class ProfileFragment : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-        binding.publicationsBtn.setOnClickListener {
+       /* binding.publicationsBtn.setOnClickListener {
             val userPublicationsFragment = UserPublicationsFragment()
             setFragment(userPublicationsFragment)
-        }
+        }*/
        /* binding.editProfileBtn.setOnClickListener {
             val editProfileFragment = EditProfileFragment()
             setFragment(editProfileFragment)
