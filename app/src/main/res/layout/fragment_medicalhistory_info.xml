@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.appointments.PetInfoFragment">
+    tools:context=".view.appointments.MedicalHistoryInfoFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -55,11 +55,6 @@
                     android:fontFamily="@font/roboto_black"
                     android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/textViewLocation"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="#33691E" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -67,14 +62,15 @@
             android:id="@+id/commentBttn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/brown_dark"
-            android:text="Editar"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_fill_blue"
+            android:text="Añadir observacion"
+            android:textColor="#1B1A1A"
             android:theme="@style/Theme.AppCompat"
             app:iconTint="@color/brown_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+            app:layout_constraintTop_toBottomOf="@+id/textMultiLineComment" />
 
         <TextView
             android:id="@+id/textView5"
@@ -99,28 +95,6 @@
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Telefono:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Dirección:"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-        <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -129,7 +103,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Correo electronico:"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
         <TextView
             android:id="@+id/textView13"
@@ -149,7 +123,7 @@
             android:layout_marginStart="35dp"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/roboto_black"
-            android:text="Historial Clinico"
+            android:text="Observaciones Clinicas"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
@@ -177,51 +151,17 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewAge" />
 
         <TextView
-            android:id="@+id/textViewPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/textViewOwner" />
-
-        <TextView
-            android:id="@+id/textViewAddres"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toBottomOf="@+id/textViewPhone" />
-
-        <TextView
-            android:id="@+id/textViewDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="TextView"
-            app:layout_constraintStart_toEndOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAddres" />
-
-        <TextView
             android:id="@+id/textViewDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
             android:fontFamily="@font/roboto_regular"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/textView13"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDate" />
+            tools:layout_editor_absoluteY="453dp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/commentRecyclerView"
             android:layout_width="409dp"
             android:layout_height="187dp"
             android:layout_marginStart="5dp"
@@ -230,6 +170,42 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <Button
+            android:id="@+id/homebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_fill_blue"
+            android:text="Volver al inicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentBttn" />
+
+        <EditText
+            android:id="@+id/textMultiLineComment"
+            android:layout_width="363dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/border_fill_red"
+            android:ems="10"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/commentRecyclerView" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/textView12"
+            app:layout_constraintTop_toBottomOf="@+id/textViewOwner" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
