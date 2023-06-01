@@ -11,7 +11,7 @@ import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import android.Manifest
 import android.content.Intent
-import co.edu.icesi.dev.equineapp.view.appointment.AppointmentFormFragment
+import co.edu.icesi.dev.equineapp.view.appointments.AppointmentsFragment
 import co.edu.icesi.dev.equineapp.view.auth.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         } else {
             val homeFragment = HomeFragment()
             val profileFragment = ProfileFragment()
-            val appointmentFragment = AppointmentFormFragment()
+            val appointmentsFragment = AppointmentsFragment()
 
             setFragment(homeFragment)
 
@@ -43,8 +43,8 @@ class MainActivity : AppCompatActivity() {
                         setFragment(homeFragment)
                         return@setOnItemSelectedListener true
                     }
-                    R.id.navigation_calendar -> {
-                        setFragment(appointmentFragment)
+                    R.id.navigation_appointments -> {
+                        setFragment(appointmentsFragment)
                         return@setOnItemSelectedListener true
                     }
                     R.id.navigation_profile -> {
@@ -58,12 +58,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadUser(): User? {
-        val sp = getSharedPreferences("equineapp", AppCompatActivity.MODE_PRIVATE)
+        val sp = getSharedPreferences("equine-app", AppCompatActivity.MODE_PRIVATE)
         val json = sp.getString("user", "NO_USER")
-        if (json == "NO_USER") {
-            return null
+        return if (json == "NO_USER") {
+            null
         } else {
-            return Gson().fromJson(json, User::class.java)
+            Gson().fromJson(json, User::class.java)
         }
     }
 

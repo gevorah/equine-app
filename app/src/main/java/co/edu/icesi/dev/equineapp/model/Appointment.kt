@@ -4,11 +4,11 @@ import java.util.*
 
 class Appointment (
     var id: String = "",
-    var ownerName: String = "",
+    var owner: String = "",
     var address: String = "",
     var date: String = "",
-    var hour: String = "",
-    var motive: String = "",
-    var userId: String = "",
+    var time: String = "",
+    var reason: String = "",
+    var ownerId: String = "",
     var horseId: String = "",
 )

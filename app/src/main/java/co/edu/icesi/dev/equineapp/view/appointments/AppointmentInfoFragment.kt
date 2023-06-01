@@ -1,4 +1,4 @@
-package co.edu.icesi.dev.equineapp.view.appointment
+package co.edu.icesi.dev.equineapp.view.appointments
 
 import androidx.fragment.app.Fragment
 

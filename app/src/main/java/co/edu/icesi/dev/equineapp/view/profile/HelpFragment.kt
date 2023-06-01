@@ -36,20 +36,20 @@ class HelpFragment : Fragment() {
     private fun initData() {
         questioList.add(
             Questions(
-                "¿Como publicar una mascota perdida?",
-                "En la pantalla de inicio oprimir el boton publicar mascosta perdida"
+                "¿Cómo creo una historia clínica?",
+                "Desde la pantalla de inicio, en la parte superior hacer clic en el boton que dice \"Agendar historia clínica\"."
             )
         )
         questioList.add(
             Questions(
-                "¿Como publicar una mascota en adopcion?",
-                "En la pantalla de inicio oprimir el boton publicar mascosta perdida"
+                "¿Cómo agendo una cita?",
+                "Desde la pantalla de inicio, en la parte superior hacer clic en el boton que dice \"Crear historia clínica\"."
             )
         )
         questioList.add(
             Questions(
-                "¿Como adoptar una mascota?",
-                "oprimir sobre la publicacion que te interesa y se desplega la informacion de contacto"
+                "¿Cómo cancelo una cita?",
+                "Desde la pantalla de perfil, en la parte superior hacer clic en la opción que dice \"Centro de citas\", busca la cita que quieres cancelar y dale al boton de cancelar."
             )
         )
 

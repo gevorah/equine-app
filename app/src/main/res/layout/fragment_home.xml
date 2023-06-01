@@ -62,16 +62,6 @@
         app:layout_constraintTop_toBottomOf="@+id/historyImageButton"
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#A3B0E8"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
-
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"

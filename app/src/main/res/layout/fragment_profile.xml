@@ -65,7 +65,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/username_txt" />
 
-
     <TextView
         style="@style/Widget.App.Text.Subtitle"
         android:id="@+id/content_title"
@@ -78,16 +77,28 @@
         app:layout_constraintTop_toBottomOf="@+id/email_txt" />
 
     <Button
-        android:id="@+id/publications_btn"
+        android:id="@+id/appointments_btn"
         style="@style/Widget.App.Button.Text"
         android:layout_marginTop="3dp"
-        android:text="@string/publications"
+        android:text="@string/appointments"
         android:drawableStart="@drawable/ic_list_24"
         android:drawableEnd="@drawable/ic_navigate_next_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/content_title" />
 
+    <Button
+        android:id="@+id/histories_btn"
+        style="@style/Widget.App.Button.Text"
+        android:layout_marginTop="3dp"
+        android:text="@string/histories"
+        android:drawableStart="@drawable/ic_list_24"
+        android:drawableEnd="@drawable/ic_navigate_next_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appointments_btn" />
+
+    <!--
     <TextView
         style="@style/Widget.App.Text.Subtitle"
         android:id="@+id/user_title"
@@ -97,7 +108,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/user"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/publications_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/histories_btn" />
 
     <Button
         android:id="@+id/edit_profile_btn"
@@ -109,6 +120,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user_title" />
+    -->
 
     <TextView
         style="@style/Widget.App.Text.Subtitle"
@@ -119,7 +131,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/support"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_profile_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/histories_btn" />
+        <!--app:layout_constraintTop_toBottomOf="@+id/edit_profile_btn" /> -->
 
     <Button
         style="@style/Widget.App.Button.Text"

@@ -1,6 +1,5 @@
-package co.edu.icesi.dev.equineapp.view.appointment
+package co.edu.icesi.dev.equineapp.view.appointments
 
-import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -10,19 +9,15 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Toast
-import androidx.activity.result.ActivityResult
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentAppointmentFormBinding
 import co.edu.icesi.dev.equineapp.model.Appointment
 import co.edu.icesi.dev.equineapp.model.Horse
-import co.edu.icesi.dev.equineapp.model.Publication
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
 import java.util.*
 
 class AppointmentFormFragment () : Fragment(){

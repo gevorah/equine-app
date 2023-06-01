@@ -10,7 +10,7 @@
     <string name="prompt_rep_new_password">Repita la nueva contraseña</string>
 
 
-    <!-- strings related to login -->
+    <!-- strings related to auth -->
     <string name="action_google">Continuar con Google</string>
     <string name="action_facebook">Continuar con Facebook</string>
     <string name="action_appple">Continuar con Apple</string>
@@ -24,7 +24,7 @@
     <!-- strings related to nav -->
     <string name="back_nav">Regresar</string>
     <string name="home_nav">Inicio</string>
-    <string name="pets_nav">Mascotas</string>
+    <string name="appointments_nav">Citas</string>
     <string name="account_nav">Perfil</string>
 
     <!-- strings related to appointment and medical history -->
@@ -50,14 +50,13 @@
     <string name="type">textType</string>
     <string name="gender_spinner">genderSpinner</string>
     <string name="vaccinated_spinner">vaccinatedSpinner</string>
-    <string name="ayuda1">¿Cómo publicar mascota perdida?</string>
-    <string name="ayuda1.1">En la pantalla home, oprimir el boton "publicar mascota perdida"?</string>
 
     <!-- strings related to profile -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile">Perfil</string>
     <string name="content">Contenido</string>
-    <string name="publications">Administrar publicaciones</string>
+    <string name="appointments">Centro de citas</string>
+    <string name="histories">Historias clínicas</string>
     <string name="user">Usuario</string>
     <string name="edit_profile">Editar perfil</string>
     <string name="support">Ayuda</string>
@@ -66,5 +65,14 @@
     <string name="contact">Contáctanos</string>
     <string name="logout">Cerrar Sesión</string>
     <string name="save">Guardar</string>
+
+    <!-- strings related to help -->
+    <string name="help">Centro de ayuda</string>
+    <string name="help1">¿Cómo creo una historia clínica?</string>
+    <string name="help1.1">Desde la pantalla de inicio, en la parte superior hacer clic en el boton que dice "Agendar historia clínica".</string>
+    <string name="help2">¿Cómo agendo una cita?</string>
+    <string name="help2.1">Desde la pantalla de inicio, en la parte superior hacer clic en el boton que dice "Crear historia clínica".</string>
+    <string name="help3">¿Cómo cancelo una cita?</string>
+    <string name="help3.1">Desde la pantalla de perfil, en la parte superior hacer clic en la opción que dice "Centro de citas", busca la cita que quieres cancelar y dale al boton de cancelar.</string>
 
 </resources>

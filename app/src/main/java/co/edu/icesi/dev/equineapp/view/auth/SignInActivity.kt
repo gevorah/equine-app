@@ -82,7 +82,7 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun saveUser (user: User){
-        val sp = getSharedPreferences("pets-cued", MODE_PRIVATE)
+        val sp = getSharedPreferences("equine-app", MODE_PRIVATE)
         val json = Gson().toJson(user)
         sp.edit().putString("user", json).apply()
     }

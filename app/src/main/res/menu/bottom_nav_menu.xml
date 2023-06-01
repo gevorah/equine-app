@@ -6,9 +6,9 @@
         android:title="@string/home_nav"
         android:enabled="true" />
     <item
-        android:id="@+id/navigation_calendar"
+        android:id="@+id/navigation_appointments"
         android:icon="@drawable/calendar_icon"
-        android:title="@string/pets_nav"
+        android:title="@string/appointments_nav"
         android:enabled="true" />
     <item
         android:id="@+id/navigation_profile"

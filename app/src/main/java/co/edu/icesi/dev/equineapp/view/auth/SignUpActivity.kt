@@ -3,6 +3,7 @@ package co.edu.icesi.dev.equineapp.view.auth
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import co.edu.icesi.dev.equineapp.R
@@ -38,10 +39,10 @@ class SignUpActivity : AppCompatActivity() {
                 binding.emailFld.text.toString(),
                 binding.passwordFld.text.toString()
             ).addOnSuccessListener {
-
                 val id = Firebase.auth.currentUser?.uid
                 val user = User(
-                    id!!, binding.nameFld.text.toString(),
+                    id!!,
+                    binding.nameFld.text.toString(),
                     binding.emailFld.text.toString()
                 )
 

@@ -1,4 +1,4 @@
-package co.edu.icesi.dev.equineapp.view.home
+package co.edu.icesi.dev.equineapp.view.appointments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,33 +7,23 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import co.edu.icesi.dev.equineapp.R
-import co.edu.icesi.dev.equineapp.databinding.FragmentHomeBinding
+import co.edu.icesi.dev.equineapp.databinding.FragmentAppointmentsBinding
 import co.edu.icesi.dev.equineapp.model.Appointment
-import co.edu.icesi.dev.equineapp.view.appointments.AppointmentFormFragment
+import co.edu.icesi.dev.equineapp.view.home.AppointmentAdapter
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class AppointmentsFragment : Fragment() {
 
-    private lateinit var binding: FragmentHomeBinding
+    private lateinit var binding: FragmentAppointmentsBinding
     private lateinit var publicationLayoutManager: GridLayoutManager
     private var appointmentAdapter: AppointmentAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHomeBinding.inflate(inflater, container, false)
-
-        binding.appointmentImageButton.setOnClickListener {
-            val publicationFormFragment = AppointmentFormFragment()
-            setFragment(publicationFormFragment)
-        }
-
-        binding.historyImageButton.setOnClickListener {
-            //val publicationFormFragment = AppointmentFormFragment()
-            //setFragment(publicationFormFragment)
-        }
+        binding = FragmentAppointmentsBinding.inflate(inflater, container, false)
 
         return binding.root
     }
