@@ -1,6 +1,7 @@
 package co.edu.icesi.dev.equineapp.view.appointments
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +11,14 @@ import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentAppointmentsBinding
 import co.edu.icesi.dev.equineapp.model.Appointment
 import co.edu.icesi.dev.equineapp.view.home.AppointmentAdapter
+import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.fragment_appointments.calendar
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.time.Instant
+import java.time.LocalDate
+import java.util.Date
 
 class AppointmentsFragment : Fragment() {
 
@@ -25,6 +31,30 @@ class AppointmentsFragment : Fragment() {
     ): View {
         binding = FragmentAppointmentsBinding.inflate(inflater, container, false)
 
+        binding.calendar.setOnClickListener {
+            val datePicker =
+                MaterialDatePicker.Builder.datePicker()
+                    .setTitleText("Seleccionar fecha")
+                    .setSelection(MaterialDatePicker.todayInUtcMilliseconds())
+                    .build()
+
+            datePicker.show(requireActivity().supportFragmentManager, "Date Picker")
+
+            datePicker.addOnPositiveButtonClickListener {
+                // Respond to positive button click.
+                Log.d(">>>", it.toString())
+            }
+            datePicker.addOnNegativeButtonClickListener {
+                // Respond to negative button click.
+            }
+            datePicker.addOnCancelListener {
+                // Respond to cancel button click.
+            }
+            datePicker.addOnDismissListener {
+                // Respond to dismiss events.
+            }
+        }
+
         return binding.root
     }
 
@@ -35,11 +65,13 @@ class AppointmentsFragment : Fragment() {
         appointmentsRecyclerView.setHasFixedSize(true)
         appointmentsAdapter = AppointmentAdapter(this)
         appointmentsRecyclerView.adapter = appointmentsAdapter
-        loadPublicationsFromFirebase()
+        loadAppointmentsFromFirebase()
     }
 
-    private fun loadPublicationsFromFirebase() {
-        Firebase.firestore.collection("appointments").get().addOnCompleteListener { task ->
+    private fun loadAppointmentsFromFirebase() {
+        val dateStr = ""
+        val date = dateStr.ifEmpty { LocalDate.now().toString() }
+        Firebase.firestore.collection("appointments").whereEqualTo("date", date).get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
                 val appointment = doc.toObject(Appointment::class.java)
                 appointmentsAdapter?.addAppointment(appointment)

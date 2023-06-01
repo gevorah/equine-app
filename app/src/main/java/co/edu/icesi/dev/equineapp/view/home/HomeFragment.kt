@@ -14,6 +14,9 @@ import co.edu.icesi.dev.equineapp.view.appointments.MedicalHistoryFormFragment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.time.Instant
+import java.time.LocalDate
+import java.util.Date
 
 class HomeFragment : Fragment() {
 
@@ -46,11 +49,11 @@ class HomeFragment : Fragment() {
         appointmentsRecyclerView.setHasFixedSize(true)
         appointmentsAdapter = AppointmentAdapter(this)
         appointmentsRecyclerView.adapter = appointmentsAdapter
-        loadPublicationsFromFirebase()
+        loadAppointmentsFromFirebase()
     }
 
-    private fun loadPublicationsFromFirebase() {
-        Firebase.firestore.collection("appointments").get().addOnCompleteListener { task ->
+    private fun loadAppointmentsFromFirebase() {
+        Firebase.firestore.collection("appointments").whereEqualTo("date", LocalDate.now().toString()).get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
                 val appointment = doc.toObject(Appointment::class.java)
                 appointmentsAdapter?.addAppointment(appointment)
