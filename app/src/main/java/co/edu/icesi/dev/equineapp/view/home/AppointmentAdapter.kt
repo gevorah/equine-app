@@ -25,7 +25,7 @@ class AppointmentAdapter(private val fragment: Fragment) : RecyclerView.Adapter<
         //}
         holder.nameTextView.text = appointment.horseId
         holder.addressTextView.text = appointment.address
-        holder.ownerTextView.text = appointment.owner
+        //holder.ownerTextView.text = appointment.owner
         holder.timeTextView.text = appointment.time
         holder.reasonTextView.text = appointment.reason
         holder.itemView.setOnClickListener{
