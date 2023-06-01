@@ -34,6 +34,12 @@ class AppointmentInfoFragment (private val appointment: Appointment): Fragment()
             setFragment(homeFragment)
         }
 
+        binding.medicalButtn.setOnClickListener{
+
+            //val medicalHistoryInfoFragment = MedicalHistoryInfoFragment()
+           // setFragment(medicalHistoryInfoFragment)
+        }
+
         return binding.root
     }
 

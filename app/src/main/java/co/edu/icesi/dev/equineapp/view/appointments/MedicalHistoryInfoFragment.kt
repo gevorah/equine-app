@@ -62,7 +62,7 @@ class MedicalHistoryInfoFragment (private val medicalHistory:MedicalHistory): Fr
 
         Firebase.firestore.collection("horses").document(medicalHistory.horseId).get().addOnSuccessListener {
             val horse = it.toObject(Horse::class.java)
-            Firebase.storage.reference.child("Horses")
+            Firebase.storage.reference.child("horses")
                 .child(horse!!.image).downloadUrl.addOnSuccessListener {
                 Glide.with(binding.imageViewPet).load(it).into(binding.imageViewPet)
 

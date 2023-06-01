@@ -9,39 +9,20 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/menu"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="150dp"
-            android:hint="@string/label"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/backButton">
-
-            <AutoCompleteTextView
-                android:id="@+id/complete"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="none" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextHour"
+        app:layout_constraintStart_toEndOf="@+id/editTextTextHour">
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/roboto_regular"
             android:text="Dirección "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menu" />
+            app:layout_constraintTop_toBottomOf="@+id/spinnerHorses" />
 
         <EditText
             android:id="@+id/editTextTextAddress"
@@ -53,9 +34,9 @@
             android:background="@drawable/border_fill_blue"
             android:ems="10"
             android:fontFamily="@font/roboto_regular"
+            android:hint="@string/adress_owner"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/adress_owner"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -83,9 +64,9 @@
             android:background="@drawable/border_fill_blue"
             android:ems="10"
             android:fontFamily="@font/roboto_regular"
+            android:hint="@string/motive"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="@string/motive"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -96,14 +77,15 @@
             android:id="@+id/editTextTextDate"
             android:layout_width="167dp"
             android:layout_height="48dp"
+            android:layout_marginStart="15dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
             android:background="@drawable/border_fill_blue"
             android:ems="10"
             android:fontFamily="@font/roboto_regular"
+            android:hint="dd/MM/yy"
             android:inputType="textPersonName"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editTextTextHour"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
         <TextView
@@ -137,13 +119,11 @@
             android:background="@drawable/border_fill_blue"
             android:ems="10"
             android:fontFamily="@font/roboto_regular"
+            android:hint="HH:MM"
             android:inputType="textPersonName"
             android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/editTextTextDate"
-            app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7"
-            tools:text="HH/MM" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 
         <Button
@@ -180,8 +160,8 @@
             android:layout_marginEnd="35dp"
             android:background="@drawable/border_fill_blue"
             android:ems="10"
+            android:hint="@string/phone_owner"
             android:inputType="textPersonName"
-            android:text="@string/phone_owner"
             android:textSize="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -192,22 +172,44 @@
             android:id="@+id/backButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/ic_arrow_back_24"
-            tools:layout_editor_absoluteX="11dp"
-            tools:layout_editor_absoluteY="8dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/registerButton"
-            android:layout_width="100dp"
-            android:layout_height="57dp"
-            android:layout_marginStart="15dp"
+            android:layout_width="125dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="60dp"
             android:layout_marginEnd="25dp"
             android:backgroundTint="#A8CBD1"
             android:text="Registrar Caballo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/menu"
+            app:layout_constraintStart_toEndOf="@+id/spinnerHorses"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinnerHorses"
+            android:layout_width="211dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"
+            android:text="Nombre del caballo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

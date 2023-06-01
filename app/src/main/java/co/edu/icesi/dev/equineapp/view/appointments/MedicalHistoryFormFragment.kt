@@ -111,7 +111,6 @@ class MedicalHistoryFormFragment (): Fragment() {
         )
         Firebase.storage.reference.child("horses").child(image).putFile(uri!!)
         Firebase.firestore.collection("horses").document(horse.id).set(horse)
-        return true
 
         val medicalHistory = MedicalHistory(
             medicalHistoryId,

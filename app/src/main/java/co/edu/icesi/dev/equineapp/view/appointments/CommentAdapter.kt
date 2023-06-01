@@ -8,6 +8,7 @@ import co.edu.icesi.dev.equineapp.model.Comment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class CommentAdapter (private val MedicalHistoryInfoFragment: MedicalHistoryInfoFragment) : RecyclerView.Adapter<CommentView>() {
 
@@ -23,7 +24,7 @@ class CommentAdapter (private val MedicalHistoryInfoFragment: MedicalHistoryInfo
         val comment = commentList[position]
         comment.also { holder.comment = it }
 
-        holder.DateTextView.text= LocalDateTime.now().toString()
+        holder.DateTextView.text= LocalDateTime.now().toString().format(DateTimeFormatter.ofPattern("MMM dd yyyy, hh:mm:ss a"))
         holder.commentTextView.text= comment.content
     }
 

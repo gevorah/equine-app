@@ -14,7 +14,7 @@
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/activity_sign_up.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/comment.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fila_help.xml" value="0.25" />
-        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_appointment_form.xml" value="0.31710709318497915" />
+        <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_appointment_form.xml" value="0.33" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_appointment_info.xml" value="0.368" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_edit_profile.xml" value="0.215625" />
         <entry key="..\:/Escritorio/equine-app/app/src/main/res/layout/fragment_help.xml" value="0.215625" />
@@ -36,7 +36,7 @@
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
