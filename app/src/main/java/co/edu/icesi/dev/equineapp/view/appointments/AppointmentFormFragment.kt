@@ -19,6 +19,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
+import kotlin.collections.ArrayList
 
 class AppointmentFormFragment () : Fragment(){
 
@@ -32,20 +33,29 @@ class AppointmentFormFragment () : Fragment(){
     ): View {
         binding = FragmentAppointmentFormBinding.inflate(inflater, container, false)
 
-        val items = listOf("Option 1", "Option 2", "Option 3", "Option 4")
-
-        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, items)
+        val horses = ArrayList<Horse>()
+        Firebase.firestore.collection("horses").get().addOnCompleteListener { task ->
+            for (doc in task.result!!) {
+                val horse = doc.toObject(Horse::class.java)
+                horses.add(horse)
+            }
+        }
+        val adapter = ArrayAdapter(requireContext(), R.layout.list_item, horses)
         (binding.menu.editText as? AutoCompleteTextView)?.setAdapter(adapter)
 
-
-
-
-
+        binding.registerButton.setOnClickListener {
+                val medicalHistoryFormFragment = MedicalHistoryFormFragment()
+                setFragment(medicalHistoryFormFragment)
+        }
 
         binding.saveBttn.setOnClickListener {
-            if(publish()){
-                val appointmentInfoFragment = AppointmentInfoFragment()
-                setFragment(appointmentInfoFragment)
+           val idAppointment = UUID.randomUUID().toString()
+            if(publish(idAppointment)){
+                Firebase.firestore.collection("appointments").document(idAppointment).get().addOnSuccessListener {
+                    val appointment = it.toObject(Appointment::class.java)
+                    val appointmentInfoFragment = AppointmentInfoFragment(appointment!!)
+                    setFragment(appointmentInfoFragment)
+                }
             }
         }
         binding.backButton.setOnClickListener{
@@ -62,57 +72,38 @@ class AppointmentFormFragment () : Fragment(){
 
 
 
-    private fun publish(): Boolean {
-        if(uri==null){
-            Toast.makeText(this.context, "Debe subir una imagen del caballo", Toast.LENGTH_SHORT).show()
-            return false
-        }
-        else if(!checkIfNotBlankOrEmpty(binding.editTextTextHorseName.text.toString()))
-            return false
-        else if(!checkIfNotBlankOrEmpty(binding.editTextHorseAge.text.toString()))
-            return false
-        else if(!checkIfNotBlankOrEmpty(binding.editTextTextOwnerName.text.toString()))
+    private fun publish(id:String): Boolean {
+        if(!checkIfNotBlankOrEmpty(binding.complete.text.toString()))
             return false
         else if(!checkIfNotBlankOrEmpty(binding.editTextTextAddress.text.toString()))
+            return false
+        else if(!checkIfNotBlankOrEmpty(binding.editTextTextPhoneNumber.text.toString()))
+            return false
+        else if(!checkIfNotBlankOrEmpty(binding.editTextTextMotive.text.toString()))
             return false
         else if(!checkIfNotBlankOrEmpty(binding.editTextTextDate.text.toString()))
             return false
         else if(!checkIfNotBlankOrEmpty(binding.editTextTextHour.text.toString()))
             return false
-        else if(!checkIfNotBlankOrEmpty(binding.editTextTextMotive.text.toString()))
-            return false
-        else if(!checkIfNotBlankOrEmpty(binding.editTextTextPhoneNumber.text.toString()))
-            return false
 
-        val horseName = binding.editTextTextHorseName.text.toString()
-        val horseAge = binding.editTextHorseAge.text.toString()
-        val ownerName = binding.editTextTextOwnerName.text.toString() // OK
+        val horseId=""
+        val horseName= binding.complete.text.toString()
         val address = binding.editTextTextAddress.text.toString()
-        val date = binding.editTextTextDate.text.toString() // OK
-        val hour = binding.editTextTextHour.text.toString() // OK
-        val motive = binding.editTextTextMotive.text.toString()
         val phoneNumber = binding.editTextTextPhoneNumber.text.toString()
-
-        val horseid=UUID.randomUUID().toString()
-
-        val horse = Horse(
-            horseid,
-            horseName,
-            horseAge,
-            Firebase.auth.currentUser!!.uid
-        )
-
-        Firebase.firestore.collection("horses").document(horse.id).set(horse)
+        val reason = binding.editTextTextMotive.text.toString()
+        val date = binding.editTextTextDate.text.toString() // OK
+        val time = binding.editTextTextHour.text.toString() // OK
 
         val appointment = Appointment(
-            UUID.randomUUID().toString(),
-            ownerName,
+            id,
+            horseName,
             address,
+            phoneNumber,
             date,
-            hour,
-            motive,
+            time,
+            reason,
             Firebase.auth.currentUser!!.uid,
-            horseid
+            horseId
         )
         Firebase.firestore.collection("appointments").document(appointment.id).set(appointment)
         return true

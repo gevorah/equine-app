@@ -7,5 +7,6 @@ class Horse (
     var image: String = "",
     var horseName: String = "",
     var horseAge: String = "",
+    var medicalHistoryId: String = "",
     var userId: String = "",
 )

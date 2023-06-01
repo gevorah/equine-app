@@ -2,13 +2,9 @@ package co.edu.icesi.dev.equineapp.model
 
 class MedicalHistory(
     var id: String = "",
-    var horseName: String = "",
-    var ownerName: String = "",
-    var address: String = "",
+    var owner: String = "",
     var email: String = "",
-    var age: String = "",
-    var phoneNumber: String = "",
-    var reason: String = "",
+    var description: String = "",
+    var horseId: String = "",
     var userId: String = "",
-    var appointmentId: String = ""
 )
