@@ -6,6 +6,11 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.model.Appointment
+import co.edu.icesi.dev.equineapp.model.Horse
+import co.edu.icesi.dev.equineapp.model.User
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.time.LocalDate
 
 class AppointmentAdapter(private val fragment: Fragment) : RecyclerView.Adapter<AppointmentView>(){
 
@@ -20,13 +25,15 @@ class AppointmentAdapter(private val fragment: Fragment) : RecyclerView.Adapter<
     override fun onBindViewHolder(holder: AppointmentView, position: Int) {
         val appointment = appointments[position]
         appointment.also { holder.appointment = it }
-        //Firebase.storage.reference.child("publications").child(publication.image).downloadUrl.addOnSuccessListener {
-        //    Glide.with(holder.petImageView).load(it).into(holder.petImageView)
-        //}
-        holder.nameTextView.text = appointment.horseId
+        Firebase.firestore.collection("horses").document(appointment.horseId).get().addOnSuccessListener {
+            val horse = it.toObject(Horse::class.java)
+            holder.nameTextView.text = horse!!.horseName
+        }
         holder.addressTextView.text = appointment.address
-
-        //holder.ownerTextView.text = appointment.owner
+        Firebase.firestore.collection("users").document(appointment.userId).get().addOnSuccessListener {
+            val owner = it.toObject(User::class.java)
+            holder.ownerTextView.text = owner!!.name
+        }
         holder.timeTextView.text = appointment.time
         holder.reasonTextView.text = appointment.reason
         holder.itemView.setOnClickListener{

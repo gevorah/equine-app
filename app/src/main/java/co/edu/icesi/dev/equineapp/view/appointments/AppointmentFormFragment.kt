@@ -49,8 +49,6 @@ class AppointmentFormFragment () : Fragment(){
             binding.spinnerHorses.adapter=aaHorses
         }
 
-
-        
         binding.registerButton.setOnClickListener {
                 val medicalHistoryFormFragment = MedicalHistoryFormFragment()
                 setFragment(medicalHistoryFormFragment)
@@ -77,8 +75,6 @@ class AppointmentFormFragment () : Fragment(){
         addToBackStack(null)
         commit()
     }
-
-
 
     private fun publish(id:String): Boolean {
 

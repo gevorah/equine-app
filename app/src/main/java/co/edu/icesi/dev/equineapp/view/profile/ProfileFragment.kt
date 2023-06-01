@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentProfileBinding
 import co.edu.icesi.dev.equineapp.model.User
+import co.edu.icesi.dev.equineapp.view.appointments.AppointmentFormFragment
+import co.edu.icesi.dev.equineapp.view.appointments.MedicalHistoryFormFragment
 import co.edu.icesi.dev.equineapp.view.auth.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -27,14 +29,14 @@ class ProfileFragment : Fragment() {
 
         binding = FragmentProfileBinding.inflate(inflater, container, false)
 
-       /* binding.publicationsBtn.setOnClickListener {
-            val userPublicationsFragment = UserPublicationsFragment()
-            setFragment(userPublicationsFragment)
-        }*/
-       /* binding.editProfileBtn.setOnClickListener {
-            val editProfileFragment = EditProfileFragment()
-            setFragment(editProfileFragment)
-        }*/
+        binding.appointmentsBtn.setOnClickListener {
+            val appointmentFormFragment = AppointmentFormFragment()
+            setFragment(appointmentFormFragment)
+        }
+        binding.historiesBtn.setOnClickListener {
+            val medicalHistoryFormFragment = MedicalHistoryFormFragment()
+            setFragment(medicalHistoryFormFragment)
+        }
         binding.questionsBtn.setOnClickListener {
             val helpFragment = HelpFragment()
             setFragment(helpFragment)

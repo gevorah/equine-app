@@ -2,7 +2,6 @@ package co.edu.icesi.dev.equineapp.model
 
 class Appointment (
     var id: String = "",
-    var horseName: String = "",
     var address: String = "",
     var phoneNumber: String = "",
     var date: String = "",

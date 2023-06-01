@@ -34,12 +34,6 @@ class AppointmentInfoFragment (private val appointment: Appointment): Fragment()
             setFragment(homeFragment)
         }
 
-        binding.medicalButtn.setOnClickListener{
-
-            //val medicalHistoryInfoFragment = MedicalHistoryInfoFragment()
-           // setFragment(medicalHistoryInfoFragment)
-        }
-
         return binding.root
     }
 
@@ -47,7 +41,6 @@ class AppointmentInfoFragment (private val appointment: Appointment): Fragment()
         //datos de la cita
         super.onViewCreated(view, savedInstanceState)
 
-        binding.textViewHorseName.text = appointment.horseName
         binding.textViewAddres.text = appointment.address
         binding.textViewPhone.text = appointment.phoneNumber
         binding.textViewDescription.text = appointment.reason

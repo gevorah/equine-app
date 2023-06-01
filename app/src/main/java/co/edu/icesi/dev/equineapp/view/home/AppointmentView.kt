@@ -13,10 +13,9 @@ class AppointmentView(itemView:View) : RecyclerView.ViewHolder(itemView) {
     // State
     var appointment : Appointment?=null
 
-    var picImageView : ImageView = itemView.findViewById(R.id.petImageView)
     var nameTextView : TextView = itemView.findViewById(R.id.nameTextView)
-    var addressTextView : TextView = itemView.findViewById(R.id.breedTextView)
+    var addressTextView : TextView = itemView.findViewById(R.id.addressTextView)
     var ownerTextView : TextView = itemView.findViewById(R.id.ownerTextView)
-    var timeTextView : TextView = itemView.findViewById(R.id.locationTextView)
-    var reasonTextView : TextView = itemView.findViewById(R.id.locationTextView)
+    var timeTextView : TextView = itemView.findViewById(R.id.timeTextView)
+    var reasonTextView : TextView = itemView.findViewById(R.id.reasonTextView)
 }
