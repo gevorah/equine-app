@@ -18,6 +18,8 @@ import kotlinx.android.synthetic.main.fragment_appointments.calendar
 import kotlinx.android.synthetic.main.fragment_home.*
 import java.time.Instant
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
 import java.util.Date
 
 class AppointmentsFragment : Fragment() {
@@ -25,6 +27,7 @@ class AppointmentsFragment : Fragment() {
     private lateinit var binding: FragmentAppointmentsBinding
     private lateinit var appointmentsLayoutManager: GridLayoutManager
     private var appointmentsAdapter: AppointmentAdapter? = null
+    private var dateStr: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -42,7 +45,10 @@ class AppointmentsFragment : Fragment() {
 
             datePicker.addOnPositiveButtonClickListener {
                 // Respond to positive button click.
-                Log.d(">>>", it.toString())
+                val date = Instant.ofEpochMilli(it).atZone(ZoneId.systemDefault()).toLocalDate().plusDays(1);
+                dateStr = date.toString()
+                binding.calendar.setText(dateStr)
+                loadAppointmentsFromFirebase()
             }
             datePicker.addOnNegativeButtonClickListener {
                 // Respond to negative button click.
@@ -69,7 +75,6 @@ class AppointmentsFragment : Fragment() {
     }
 
     private fun loadAppointmentsFromFirebase() {
-        val dateStr = ""
         val date = dateStr.ifEmpty { LocalDate.now().toString() }
         Firebase.firestore.collection("appointments").whereEqualTo("date", date).get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
