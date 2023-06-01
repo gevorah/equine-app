@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentProfileBinding
 import co.edu.icesi.dev.equineapp.model.User
-import co.edu.icesi.dev.equineapp.view.login.LoginActivity
+import co.edu.icesi.dev.equineapp.view.auth.LoginActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.ktx.messaging

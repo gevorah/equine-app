@@ -1,10 +1,9 @@
-package co.edu.icesi.dev.equineapp.view.login
+package co.edu.icesi.dev.equineapp.view.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import co.edu.icesi.dev.equineapp.databinding.ActivityLoginBinding
-import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 

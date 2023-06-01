@@ -1,4 +1,4 @@
-package co.edu.icesi.dev.equineapp.view.login
+package co.edu.icesi.dev.equineapp.view.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

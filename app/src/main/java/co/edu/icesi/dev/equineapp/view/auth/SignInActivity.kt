@@ -1,4 +1,4 @@
-package co.edu.icesi.dev.equineapp.view.login
+package co.edu.icesi.dev.equineapp.view.auth
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -66,6 +66,11 @@ class SignInActivity : AppCompatActivity() {
                     }
             }else
                 Toast.makeText(this, "Escriba su correo para recuperar su contraseña", Toast.LENGTH_SHORT).show()
+        }
+
+        binding.signUpTxt.setOnClickListener {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
         }
     }
 

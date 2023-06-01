@@ -7,5 +7,5 @@
         android:right="10sp"
         android:top="10sp" />
     <corners android:radius="30sp" />
-    <solid android:color="@color/green_light"/>
+    <solid android:color="@color/orange"/>
 </shape>

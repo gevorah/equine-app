@@ -51,7 +51,7 @@
         android:id="@+id/sign_up_txt"
         android:text="@string/action_sign_up"
         android:clickable="true"
-        android:textColor="@color/blue"
+        android:textColor="@color/link"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

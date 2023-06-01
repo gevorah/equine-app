@@ -7,15 +7,14 @@ import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.model.User
 import co.edu.icesi.dev.equineapp.view.home.HomeFragment
 import co.edu.icesi.dev.equineapp.view.profile.ProfileFragment
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_profile.*
 import android.Manifest
 import android.content.Intent
 import co.edu.icesi.dev.equineapp.view.appointment.AppointmentFormFragment
-import co.edu.icesi.dev.equineapp.view.login.LoginActivity
+import co.edu.icesi.dev.equineapp.view.auth.LoginActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,32 +25,36 @@ class MainActivity : AppCompatActivity() {
 
         requestPermissions(arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 1)
 
-        /* if (loadUser() == null || Firebase.auth.currentUser == null || Firebase.auth.currentUser?.isEmailVerified == false) {
+        if (loadUser() == null || Firebase.auth.currentUser == null || Firebase.auth.currentUser?.isEmailVerified == false) {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish()
             return
-        } else {*/
-        val homeFragment = HomeFragment()
-        val profileFragment = ProfileFragment()
-        val appointmentfragment = AppointmentFormFragment()
+        } else {
+            val homeFragment = HomeFragment()
+            val profileFragment = ProfileFragment()
+            val appointmentFragment = AppointmentFormFragment()
 
-        setFragment(appointmentfragment)
+            setFragment(homeFragment)
 
-        bottom_navigation?.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.navigation_home -> {
-                    setFragment(homeFragment)
-                    return@setOnItemSelectedListener true
+            bottom_navigation?.setOnItemSelectedListener {
+                when (it.itemId) {
+                    R.id.navigation_home -> {
+                        setFragment(homeFragment)
+                        return@setOnItemSelectedListener true
+                    }
+                    R.id.navigation_calendar -> {
+                        setFragment(appointmentFragment)
+                        return@setOnItemSelectedListener true
+                    }
+                    R.id.navigation_profile -> {
+                        setFragment(profileFragment)
+                        return@setOnItemSelectedListener true
+                    }
                 }
-                R.id.navigation_profile -> {
-                    setFragment(profileFragment)
-                    return@setOnItemSelectedListener true
-                }
+                true
             }
-            true
         }
-        //}
     }
 
     private fun loadUser(): User? {
@@ -61,20 +64,6 @@ class MainActivity : AppCompatActivity() {
             return null
         } else {
             return Gson().fromJson(json, User::class.java)
-        }
-    }
-
-    private fun badgeSetup(id: Int, alerts: Int) {
-        val badge = bottom_navigation.getOrCreateBadge(id)
-        badge.isVisible = true
-        badge.number = alerts
-    }
-
-    private fun badgeClear(id: Int) {
-        val badgeDrawable = bottom_navigation.getBadge(id)
-        if (badgeDrawable != null) {
-            badgeDrawable.isVisible = false
-            badgeDrawable.clearNumber()
         }
     }
 

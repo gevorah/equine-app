@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- themes -->
     <color name="purple_200">#BB86FC</color>
     <color name="purple_500">#6200EE</color>
     <color name="purple_700">#3700B3</color>
     <color name="teal_200">#03DAC5</color>
     <color name="teal_700">#018786</color>
 
+    <!-- equine-app -->
     <color name="black">#1D2021</color>
     <color name="white">#FFFFFF</color>
+    <color name="orange">#CDA348</color>
+    <color name="blue_dark">#062065</color>
+    <color name="blue_light">#A3B0E8</color>
+    <color name="red">#F74B4B</color>
+
     <color name="gray_dark">#48464A</color>
     <color name="gray_light">#605D62</color>
-    <color name="blue">#0645AD</color>
     <color name="purple_light">#336750A4</color>
+    <color name="link">#0645AD</color>
 
-    <color name="green_dark">#82BA6A</color>
-    <color name="green_light">#C9FFB2</color>
     <color name="brown_dark">#635434</color>
     <color name="brown_light">#FFCF9E70</color>
+    <!--
     <color name="beige">#FCDFB6</color>
-    <color name="red">#D32626</color>
     <color name="pink">#F4CECE</color>
+    -->
 </resources>

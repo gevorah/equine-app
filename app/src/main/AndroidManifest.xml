@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EquineApp"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
@@ -26,9 +26,9 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <!-- Login -->
+        <!-- Auth -->
         <activity
-            android:name=".view.login.LoginActivity"
+            android:name=".view.auth.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,7 +39,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.login.SignUpActivity"
+            android:name=".view.auth.SignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".view.login.SignInActivity"
+            android:name=".view.auth.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -6,8 +6,8 @@
         android:title="@string/home_nav"
         android:enabled="true" />
     <item
-        android:id="@+id/navigation_pets"
-        android:icon="@drawable/paw_icon"
+        android:id="@+id/navigation_calendar"
+        android:icon="@drawable/calendar_icon"
         android:title="@string/pets_nav"
         android:enabled="true" />
     <item
