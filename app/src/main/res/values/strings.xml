@@ -8,6 +8,7 @@
     <string name="prompt_password">Contraseña</string>
     <string name="prompt_new_password">Nueva contraseña</string>
     <string name="prompt_rep_new_password">Repita la nueva contraseña</string>
+    <string name="date">Fecha</string>
 
     <!-- actions -->
     <string name="action_edit">Editar</string>

@@ -20,6 +20,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/calendar"
+        style="@style/Widget.App.EditText.RoundBox"
+        android:layout_marginTop="24dp"
+        android:autofillHints="@string/date"
+        android:drawableEnd="@drawable/ic_calendar_24"
+        android:hint="@string/date"
+        android:inputType="date"
+        android:selectAllOnFocus="true"
+        android:clickable="false"
+        android:focusable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/appointmentsRecyclerView"
         android:layout_width="0dp"
@@ -29,6 +44,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/calendar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
