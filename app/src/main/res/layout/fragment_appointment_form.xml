@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#93D6F4"
     tools:context=".view.appointments.AppointmentFormFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,78 +18,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginTop="15dp"
-            android:layout_marginEnd="35dp"
+            android:layout_marginEnd="150dp"
             android:hint="@string/label"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/backButton">
 
             <AutoCompleteTextView
+                android:id="@+id/complete"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Nombre caballo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/menu" />
-
-        <EditText
-            android:id="@+id/editTextTextHorseName"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/border_fill_blue"
-            android:ems="10"
-            android:fontFamily="@font/roboto_regular"
-            android:inputType="textPersonName"
-            android:text="@string/name_horse"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Nombre del dueño"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextHorseAge" />
-
-        <EditText
-            android:id="@+id/editTextTextOwnerName"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/border_fill_blue"
-            android:ems="10"
-            android:fontFamily="@font/roboto_regular"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="@string/name_owner"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <TextView
             android:id="@+id/textView2"
@@ -99,7 +41,7 @@
             android:fontFamily="@font/roboto_regular"
             android:text="Dirección "
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextOwnerName" />
+            app:layout_constraintTop_toBottomOf="@+id/menu" />
 
         <EditText
             android:id="@+id/editTextTextAddress"
@@ -245,33 +187,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Edad del caballo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextHorseName" />
-
-        <EditText
-            android:id="@+id/editTextHorseAge"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="35dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="35dp"
-            android:background="@drawable/border_fill_blue"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/age"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-
 
         <ImageButton
             android:id="@+id/backButton"
@@ -281,6 +196,18 @@
             tools:layout_editor_absoluteX="11dp"
             tools:layout_editor_absoluteY="8dp" />
 
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="100dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="25dp"
+            android:backgroundTint="#A8CBD1"
+            android:text="Registrar Caballo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/menu"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
