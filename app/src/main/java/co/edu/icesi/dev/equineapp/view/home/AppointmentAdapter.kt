@@ -38,7 +38,7 @@ class AppointmentAdapter(private val fragment: Fragment) : RecyclerView.Adapter<
         return appointments.size
     }
 
-    fun addPublication(appointment: Appointment) {
+    fun addAppointment(appointment: Appointment) {
         appointments.add(appointment)
         notifyItemInserted(appointments.size-1)
     }

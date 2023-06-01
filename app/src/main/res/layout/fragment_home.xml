@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/history_home" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homePublicationRecyclerView"
+        android:id="@+id/appointmentsRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="15dp"

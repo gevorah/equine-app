@@ -10,6 +10,7 @@ import co.edu.icesi.dev.equineapp.R
 import co.edu.icesi.dev.equineapp.databinding.FragmentHomeBinding
 import co.edu.icesi.dev.equineapp.model.Appointment
 import co.edu.icesi.dev.equineapp.view.appointments.AppointmentFormFragment
+import co.edu.icesi.dev.equineapp.view.appointments.MedicalHistoryFormFragment
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -17,8 +18,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
-    private lateinit var publicationLayoutManager: GridLayoutManager
-    private var appointmentAdapter: AppointmentAdapter? = null
+    private lateinit var appointmentsLayoutManager: GridLayoutManager
+    private var appointmentsAdapter: AppointmentAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -26,13 +27,13 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         binding.appointmentImageButton.setOnClickListener {
-            val publicationFormFragment = AppointmentFormFragment()
-            setFragment(publicationFormFragment)
+            val appointmentFormFragment = AppointmentFormFragment()
+            setFragment(appointmentFormFragment)
         }
 
         binding.historyImageButton.setOnClickListener {
-            //val publicationFormFragment = AppointmentFormFragment()
-            //setFragment(publicationFormFragment)
+            val medicalHistoryFormFragment = MedicalHistoryFormFragment()
+            setFragment(medicalHistoryFormFragment)
         }
 
         return binding.root
@@ -40,11 +41,11 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.publicationLayoutManager = GridLayoutManager(context, 2)
-        homePublicationRecyclerView.layoutManager = publicationLayoutManager
-        homePublicationRecyclerView.setHasFixedSize(true)
-        appointmentAdapter = AppointmentAdapter(this)
-        homePublicationRecyclerView.adapter = appointmentAdapter
+        this.appointmentsLayoutManager = GridLayoutManager(context, 2)
+        appointmentsRecyclerView.layoutManager = appointmentsLayoutManager
+        appointmentsRecyclerView.setHasFixedSize(true)
+        appointmentsAdapter = AppointmentAdapter(this)
+        appointmentsRecyclerView.adapter = appointmentsAdapter
         loadPublicationsFromFirebase()
     }
 
@@ -52,7 +53,7 @@ class HomeFragment : Fragment() {
         Firebase.firestore.collection("appointments").get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
                 val appointment = doc.toObject(Appointment::class.java)
-                appointmentAdapter?.addPublication(appointment)
+                appointmentsAdapter?.addAppointment(appointment)
             }
         }
     }

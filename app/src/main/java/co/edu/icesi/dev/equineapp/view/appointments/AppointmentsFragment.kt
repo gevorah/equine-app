@@ -17,8 +17,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class AppointmentsFragment : Fragment() {
 
     private lateinit var binding: FragmentAppointmentsBinding
-    private lateinit var publicationLayoutManager: GridLayoutManager
-    private var appointmentAdapter: AppointmentAdapter? = null
+    private lateinit var appointmentsLayoutManager: GridLayoutManager
+    private var appointmentsAdapter: AppointmentAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
@@ -30,11 +30,11 @@ class AppointmentsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.publicationLayoutManager = GridLayoutManager(context, 2)
-        homePublicationRecyclerView.layoutManager = publicationLayoutManager
-        homePublicationRecyclerView.setHasFixedSize(true)
-        appointmentAdapter = AppointmentAdapter(this)
-        homePublicationRecyclerView.adapter = appointmentAdapter
+        this.appointmentsLayoutManager = GridLayoutManager(context, 2)
+        appointmentsRecyclerView.layoutManager = appointmentsLayoutManager
+        appointmentsRecyclerView.setHasFixedSize(true)
+        appointmentsAdapter = AppointmentAdapter(this)
+        appointmentsRecyclerView.adapter = appointmentsAdapter
         loadPublicationsFromFirebase()
     }
 
@@ -42,7 +42,7 @@ class AppointmentsFragment : Fragment() {
         Firebase.firestore.collection("appointments").get().addOnCompleteListener { task ->
             for (doc in task.result!!) {
                 val appointment = doc.toObject(Appointment::class.java)
-                appointmentAdapter?.addPublication(appointment)
+                appointmentsAdapter?.addAppointment(appointment)
             }
         }
     }
