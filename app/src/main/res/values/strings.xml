@@ -9,6 +9,9 @@
     <string name="prompt_new_password">Nueva contraseña</string>
     <string name="prompt_rep_new_password">Repita la nueva contraseña</string>
 
+    <!-- actions -->
+    <string name="action_edit">Editar</string>
+    <string name="action_delete">Eliminar</string>
 
     <!-- strings related to auth -->
     <string name="action_google">Continuar con Google</string>
@@ -37,22 +40,7 @@
     <string name="email">correo electronico</string>
     <string name="description">Descripción fisica del caballo</string>
 
-
-    <!-- strings related to s -->
-    <string name="adopcion">Adopción</string>
-    <string name="perdido">Perdido</string>
-    <string name="mis_publicaciones">Mis Publicaciones</string>
-    <string name="add_publication">Añadir publicación</string>
-    <string name="addpublication">addPublication</string>
-    <string name="action_edit_publication">Editar</string>
-    <string name="action_delete_publication">Eliminar</string>
-    <string name="filter">Filtrar</string>
-    <string name="type">textType</string>
-    <string name="gender_spinner">genderSpinner</string>
-    <string name="vaccinated_spinner">vaccinatedSpinner</string>
-
     <!-- strings related to profile -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="profile">Perfil</string>
     <string name="content">Contenido</string>
     <string name="appointments">Centro de citas</string>
